@@ -32,3 +32,12 @@ function convertirGR(id) {
     document.getElementById("grados").value = grad;
     document.getElementById("radianes").value = rad;
 }
+
+function mostrar_ocultar(valorMO){
+    if(valorMO=="val_mostrar"){
+        document.getElementById("divMO").style.display = 'block';
+    }else if(valorMO=="valor_ocultar"){
+        document.getElementById("divMO").style.display = 'none';
+    }
+
+}
