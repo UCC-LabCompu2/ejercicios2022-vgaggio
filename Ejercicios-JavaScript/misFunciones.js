@@ -7,6 +7,12 @@
  */
 
 function cambiarUnidades(id, valor){
+    var metro, pulgada, pie, yarda;
+
+    if(valor.includes(",")){
+        valor=valor.replace(",",".");
+    }
+
     if(isNaN(valor)){
         alert("Se ingreso un valor invalido");
         document.lasUnidades.unid_metro.value = "";
@@ -18,6 +24,7 @@ function cambiarUnidades(id, valor){
         document.lasUnidaes.unid_pie.value = 3.28084*valor;
         document.lasUnidaes.unid_yarda.value = 1.09361*valor
     }
+    document.lasUnidades.unid_metro.value = Math.round(metro*100)/100;
 }
 function convertirGR(id) {
 
