@@ -41,3 +41,11 @@ function mostrar_ocultar(valorMO){
     }
 
 }
+
+function calcularSuma(){
+    var num1, num2;
+
+    num1=Number(document.getElementByName("sum_num1")[0].value);
+    num2=document.getElementByName("sum_num2")[0].value;
+    document.getElementsByName("sum_total")[0].value=num1 + Number(num2);
+}
