@@ -56,3 +56,26 @@ function calcularSuma(){
     num2=document.getElementByName("sum_num2")[0].value;
     document.getElementsByName("sum_total")[0].innerHTML=num1 + Number(num2);
 }
+
+function cargarWeb(){
+
+    var cant, unidad, urlComp;
+
+    cant = document.getElementById("distancia").value;
+    unidad = document.getElementByName("unidades")[0].value;
+    urlComp = "segundaWeb.html#" + cant "#" + unidad;
+    window.open(urlComp);
+
+}
+
+function cargarResultado(){
+    var urlComp, can, un;
+
+    urlComp = window.location.href.split("/")[5];
+
+    can =urlComp.split("#")[1];
+    un = urlComp.split("#")[2];
+
+
+    document.getElementById("dist").value = can + "" + un;
+}
