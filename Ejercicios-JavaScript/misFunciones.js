@@ -95,3 +95,35 @@ function dibujarCirCuad(){
     ctx.stroke();
     ctx.fill();
 }
+
+var bandera;
+function dibujar(event){
+    var canvas = document.getElementById("canvasAdibujar");
+    var ctx = canvas.getContext("2d");
+    
+    var posX= event.clientX;
+    var posY = event.clientY;
+
+    console.log(posX, posY);
+
+    canvas.onmousedown = funcion(){ bandera=true};
+    canvas.onmouseup = funtion(){bandear=false};
+    
+    if(bandera){
+        ctx.fillRect(posX,posY, 5, 5);
+        ctx.fill;
+    }
+ 
+    
+    
+}
+
+function limpiarCanvas(){
+
+    var canvas = document.getElementById("canvasAdibujar");
+    var ctx = canvas.getContext("2d");
+
+    canvas.width = canvas.width;
+
+
+}
