@@ -7,8 +7,6 @@
  */
 
 function cambiarUnidades(id, valor){
-    var metro, pulgada, pie, yarda;
-
     if(valor.includes(",")){
         valor=valor.replace(",",".");
     }
@@ -18,14 +16,26 @@ function cambiarUnidades(id, valor){
         document.lasUnidades.unid_metro.value = "";
         document.lasUnidades.unid_pulgada.value ="";
         document.lasUnidaes.unid_pie.value = "";
-        document.lasUnidaes.unid_yarda.value = ";
+        document.lasUnidaes.unid_yarda.value = "";
     }else if(id=="metro"){
-        document.lasUnidades.unid_pulgada.value = 39.3701*valor;
-        document.lasUnidaes.unid_pie.value = 3.28084*valor;
-        document.lasUnidaes.unid_yarda.value = 1.09361*valor
+        document.lasUnidades.unid_pulgada.value = valor *39.3701;
+        document.lasUnidaes.unid_pie.value = valor * 3.28084;
+        document.lasUnidaes.unid_yarda.value = valor * 1.09361;
+    }else if (unidad == "pulgada"){
+    document.lasUnidades.metro.value = valor * 0.0254;
+    document.lasUnidades.pie.value = valor * 0.08333;
+    document.lasUnidades.yarda.value = valor * 0.027778;
+    }else if (unidad == "pie"){
+    document.lasUnidades.metro.value = valor * 0.3048;
+    document.lasUnidades.pulgada.value = valor * 12;
+    document.lasUnidades.yarda.value = valor * 0.333333;
+    }else if (unidad == "yarda"){
+    document.lasUnidades.metro.value = valor * 0.9144;
+    document.lasUnidades.pulgada.value = valor * 36;
+    document.lasUnidades.pie.value = valor * 3;
     }
-    document.lasUnidades.unid_metro.value = Math.round(metro*100)/100;
 }
+
 function convertirGR(id) {
 
     var grad, rad;
@@ -46,7 +56,6 @@ function mostrar_ocultar(valorMO){
     }else if(valorMO=="valor_ocultar"){
         document.getElementById("divMO").style.display = 'none';
     }
-
 }
 
 function calcularSuma(){
@@ -56,7 +65,7 @@ function calcularSuma(){
     num2=document.getElementByName("sum_num2")[0].value;
     document.getElementsByName("sum_total")[0].innerHTML=num1 + Number(num2);
 }
-
+document.lasUnidades.unid_metro.value = Math.round(metro*100)/100;
 function cargarWeb(){
 
     var cant, unidad, urlComp;
